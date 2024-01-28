@@ -22,3 +22,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: Build Bundle
+      run: |
+        dotnet ef migrations bundle --self-contained --force
+        .\efbundle.exe --connection ${CONNECTION_STRING}
+      env:
+        CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
