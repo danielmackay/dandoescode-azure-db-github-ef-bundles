@@ -54,5 +54,3 @@ jobs:
       env:
         SQL_SERVER: sql-dandoescode-azure-db-github-ef-bundles-dev
         RESOURCE_GROUP: rg-dandoescode-azure-db-github-ef-bundles-dev
-
-# TODO: Create SP Under the correct Subscripion - 'Visual Studio Enterprise Personal'
