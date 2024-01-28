@@ -28,14 +28,13 @@ jobs:
       run: dotnet dotnet-ef migrations bundle --self-contained --force
       working-directory: ./WebApi
     - name: Run Migrations
-      run: |
-        pwd
-        ls -al
-        ./efbundle --connection ${CONNECTION_STRING}
+      run: ./efbundle --connection ${CONNECTION_STRING}
       working-directory: ./WebApi
-      #some change...
-      #chmod +x ./efbundle.exe
-      ##        cd WebApi
-      ##        ls -al
       env:
         CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
+        #        pwd
+        #        ls -al
+        #some change...
+        #chmod +x ./efbundle.exe
+        ##        cd WebApi
+        ##        ls -al
