@@ -23,7 +23,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: restore tools
-      run: dotnet dotnet-ef
+      run: dotnet tool restore
     - name: Build Bundle
       run: |
         dotnet dotnet-ef migrations bundle --self-contained --force
