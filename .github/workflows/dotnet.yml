@@ -22,11 +22,13 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: restore tools
+    - name: Restore Tools
       run: dotnet tool restore
     - name: Build Bundle
-      run: dotnet dotnet-ef migrations bundle --self-contained --force --project ./WebApi/WebApi.csproj
+      run: dotnet dotnet-ef migrations bundle --self-contained --force --project
+      working-directory: ./WebApi
     - name: Run Migrations
       run: ./efbundle.exe --connection ${CONNECTION_STRING}
+      working-directory: ./WebApi
       env:
         CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
