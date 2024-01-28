@@ -32,9 +32,3 @@ jobs:
       working-directory: ./WebApi
       env:
         CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
-        #        pwd
-        #        ls -al
-        #some change...
-        #chmod +x ./efbundle.exe
-        ##        cd WebApi
-        ##        ls -al
