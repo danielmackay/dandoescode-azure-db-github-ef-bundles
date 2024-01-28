@@ -25,7 +25,7 @@ jobs:
     - name: Restore Tools
       run: dotnet tool restore
     - name: Build Bundle
-      run: dotnet dotnet-ef migrations bundle --self-contained --force --project
+      run: dotnet dotnet-ef migrations bundle --self-contained --force
       working-directory: ./WebApi
     - name: Run Migrations
       run: ./efbundle.exe --connection ${CONNECTION_STRING}
