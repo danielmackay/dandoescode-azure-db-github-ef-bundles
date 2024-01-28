@@ -31,6 +31,8 @@ jobs:
       run: |
         pwd
         ls -al
+        cd WebApi
+        ls -al
         chmod +x ./efbundle.exe
         ./efbundle.exe --connection ${CONNECTION_STRING}
       #working-directory: ./WebApi
