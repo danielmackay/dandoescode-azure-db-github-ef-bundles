@@ -33,5 +33,6 @@ jobs:
         chmod +x ./efbundle.exe
         ./efbundle.exe --connection ${CONNECTION_STRING}
       #working-directory: ./WebApi
+      #some change...
       env:
         CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
