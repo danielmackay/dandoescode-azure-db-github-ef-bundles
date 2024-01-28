@@ -25,8 +25,8 @@ jobs:
     - name: restore tools
       run: dotnet tool restore
     - name: Build Bundle
-      run: |
-        dotnet dotnet-ef migrations bundle --self-contained --force --project ./WebApi/WebApi.csproj
-        .\efbundle.exe --connection ${CONNECTION_STRING}
+      run: dotnet dotnet-ef migrations bundle --self-contained --force --project ./WebApi/WebApi.csproj
+    - name: Run Migrations
+      run: ./efbundle.exe --connection ${CONNECTION_STRING}
       env:
         CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
